@@ -6,6 +6,10 @@ Format inspired by [Keep a Changelog](https://keepachangelog.com/). Versioning: 
 
 ## [Unreleased]
 
+### Fixed
+
+- CI: upgrade `android-actions/setup-android` to v4 and install `platform-tools` only (Google removed the obsolete `tools` package).
+
 ### Added
 
 - Gradle multi-module skeleton (`:app`, `:core:model`, `:core:network`), Hilt, Compose placeholder + stub API.

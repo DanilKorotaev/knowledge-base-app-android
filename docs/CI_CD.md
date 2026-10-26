@@ -11,7 +11,7 @@
 
 | Workflow | Trigger | Actions | Status |
 |----------|---------|---------|--------|
-| `ci.yml` | push/PR → `main` | `./gradlew check assembleDebug`; UI job: emulator API 31 + `connectedDebugAndroidTest` | Done |
+| `ci.yml` | push/PR → `main` | `./gradlew check assembleDebug`; UI job: emulator API 31 + `connectedDebugAndroidTest` | Done (`setup-android@v4` + `packages: platform-tools`; do not use v3 default `tools`) |
 | `deploy-play.yml` | after green CI / `workflow_dispatch` | bump/version → sign AAB → Play internal | Pending ops task |
 | `deploy-rustore.yml` | `workflow_dispatch` | upload to RuStore | Pending ops task |
 
