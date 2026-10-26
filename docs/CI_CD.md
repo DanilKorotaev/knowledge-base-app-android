@@ -7,13 +7,13 @@
 3. **Stores only after green CI** — Play / RuStore deploy workflows need successful `ci` on the same commit.
 4. **Same commands locally and in CI** — see `.cursor/rules/gradle-ci-parity.mdc`.
 
-## Planned workflows (created in skeleton / ops tasks)
+## Workflows
 
-| Workflow | Trigger | Actions |
-|----------|---------|---------|
-| `ci.yml` | push/PR → `main` | `./gradlew check` (+ UI tests on emulator when wired) |
-| `deploy-play.yml` | after green CI on `main` and/or `workflow_dispatch` | bump/version → sign AAB → upload Play (internal track first) |
-| `deploy-rustore.yml` | `workflow_dispatch` (optional auto later) | upload to RuStore |
+| Workflow | Trigger | Actions | Status |
+|----------|---------|---------|--------|
+| `ci.yml` | push/PR → `main` | `./gradlew check assembleDebug`; UI job: emulator API 31 + `connectedDebugAndroidTest` | Done |
+| `deploy-play.yml` | after green CI / `workflow_dispatch` | bump/version → sign AAB → Play internal | Pending ops task |
+| `deploy-rustore.yml` | `workflow_dispatch` | upload to RuStore | Pending ops task |
 
 ## Local pre-push
 

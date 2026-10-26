@@ -28,7 +28,16 @@ Full decisions: [docs/TECH_STACK.md](docs/TECH_STACK.md).
 
 ## Status
 
-**Documentation + agent rules + task backlog** are in place. Application skeleton (Gradle modules, CI workflows, first screens) is tracked as pending tasks — start with [docs/todo.md](docs/todo.md).
+Skeleton is live: `:app` + `:core:model` + `:core:network`, stub API, Compose placeholder, CI + JaCoCo **≥ 80%**. Next: [docs/todo.md](docs/todo.md) (SemVer → contract sync → auth…).
+
+## Quick start
+
+```bash
+# local.properties with sdk.dir=… then:
+./gradlew check assembleDebug
+```
+
+Open the repo in Android Studio and run the **app** configuration.
 
 ## Documentation
 

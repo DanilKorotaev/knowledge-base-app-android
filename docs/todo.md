@@ -2,13 +2,13 @@
 
 ## In progress
 
-_(none — start with skeleton)_
+_(none)_
 
 ## Planned (recommended order)
 
 ### Foundation / ops
 
-1. [ ] [Repository skeleton + CI + coverage gate](tasks/pending/task-skeleton-repo-ci.md)
+1. [x] [Repository skeleton + CI + coverage gate](tasks/completed/task-skeleton-repo-ci.md)
 2. [ ] [SemVer + changelog + git-flow](tasks/pending/task-ops-semver-versioning-changelog-gitflow.md)
 3. [ ] [Google Play internal track](tasks/pending/task-ops-google-play-internal.md)
 4. [ ] [RuStore optional](tasks/pending/task-ops-rustore-optional.md)

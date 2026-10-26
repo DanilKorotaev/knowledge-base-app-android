@@ -26,17 +26,15 @@ Rules:
 - Production vs stub implementations (stub for UI tests / offline demo without URL).
 - Constructor / Hilt injection; no business-logic singletons.
 
-## Planned modules (Gradle)
+## Modules (Gradle)
 
-| Module | Role |
-|--------|------|
-| `:app` | Application, Navigation, Compose UI |
-| `:core:network` | OkHttp, Retrofit, SSE helper, auth interceptor |
-| `:core:model` | Shared domain models |
-| `:core:data` | Repository implementations, DataStore, Room (later) |
-| `:feature:*` | Optional feature modules as the app grows |
-
-Skeleton task will create the first cut (`:app` + network/model is enough for MVP).
+| Module | Role | Status |
+|--------|------|--------|
+| `:app` | Application, Compose UI, Hilt | Placeholder shell |
+| `:core:network` | `KnowledgeBaseApiClient` + stub (Retrofit/SSE later) | Stub done |
+| `:core:model` | Shared domain models (`KbSession`, …) | Done |
+| `:core:data` | Repository implementations, DataStore, Room | Later |
+| `:feature:*` | Optional feature modules as the app grows | Later |
 
 ## Feature map (parity with iOS)
 
