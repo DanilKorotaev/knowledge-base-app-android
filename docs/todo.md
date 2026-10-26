@@ -9,6 +9,7 @@ _(none)_
 ### Foundation / ops
 
 1. [x] [Repository skeleton + CI + coverage gate](tasks/completed/task-skeleton-repo-ci.md)
+1b. [x] [Telegram CI notify](tasks/completed/task-ops-telegram-ci-notify.md)
 2. [ ] [SemVer + changelog + git-flow](tasks/pending/task-ops-semver-versioning-changelog-gitflow.md)
 3. [ ] [Google Play internal track](tasks/pending/task-ops-google-play-internal.md)
 4. [ ] [RuStore optional](tasks/pending/task-ops-rustore-optional.md)

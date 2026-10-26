@@ -9,6 +9,7 @@
 - [ARCHITECTURE.md](ARCHITECTURE.md) — modules and API boundary
 - [CODING_STANDARDS.md](CODING_STANDARDS.md) — interface-first + TDD + coverage ≥ 80%
 - [CI_CD.md](CI_CD.md) — GitHub Actions, gates, secrets
+- [TELEGRAM_NOTIFY.md](TELEGRAM_NOTIFY.md) — CI/CD alerts to Telegram
 - [RELEASE_PROCESS.md](RELEASE_PROCESS.md) — SemVer, tags `android/v*`
 - [RELEASES.md](RELEASES.md) — versionCode ↔ store mapping
 - [PLAY_CONSOLE.md](PLAY_CONSOLE.md) — Google Play setup

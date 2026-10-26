@@ -11,9 +11,11 @@
 
 | Workflow | Trigger | Actions | Status |
 |----------|---------|---------|--------|
-| `ci.yml` | push/PR → `main` | `./gradlew check assembleDebug`; UI job: emulator API 31 + `connectedDebugAndroidTest` | Done (`setup-android@v4` + `packages: platform-tools`; do not use v3 default `tools`) |
-| `deploy-play.yml` | after green CI / `workflow_dispatch` | bump/version → sign AAB → Play internal | Pending ops task |
+| `ci.yml` | push/PR → `main` | `./gradlew check assembleDebug`; UI job: emulator API 31; **Telegram notify** after both | Done |
+| `deploy-play.yml` | after green CI / `workflow_dispatch` | bump/version → sign AAB → Play internal + Telegram | Pending ops task |
 | `deploy-rustore.yml` | `workflow_dispatch` | upload to RuStore | Pending ops task |
+
+Telegram details: [TELEGRAM_NOTIFY.md](TELEGRAM_NOTIFY.md).
 
 ## Local pre-push
 
@@ -22,16 +24,17 @@
 ./gradlew assembleRelease   # when signing configured
 ```
 
-## Secrets (GitHub Actions — names TBD in ops tasks)
+## Secrets (GitHub Actions)
 
 | Secret | Used by |
 |--------|---------|
+| `TELEGRAM_BOT_TOKEN` | CI notify (+ Play when wired) — **required for chat alerts** |
+| `TELEGRAM_CHAT_ID` | same |
 | Play service account JSON | `deploy-play` |
 | Upload keystore + passwords | signing |
 | RuStore API token | `deploy-rustore` |
-| Telegram notify (optional) | release announce |
 
-Never commit these values. Checklist lives in [PLAY_CONSOLE.md](PLAY_CONSOLE.md) and [RUSTORE.md](RUSTORE.md).
+Never commit these values. Checklist: [TELEGRAM_NOTIFY.md](TELEGRAM_NOTIFY.md), [PLAY_CONSOLE.md](PLAY_CONSOLE.md), [RUSTORE.md](RUSTORE.md).
 
 ## Coverage
 

@@ -3,6 +3,7 @@
 ## Foundation
 
 - [Repository skeleton + CI](tasks/completed/task-skeleton-repo-ci.md) — 2026-10-26
+- [Telegram CI notifications](tasks/completed/task-ops-telegram-ci-notify.md) — 2026-10-26
 
 ## Documentation bootstrap (2026-10-26)
 
