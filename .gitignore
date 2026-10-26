@@ -1,0 +1,46 @@
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Local config
+local.properties
+*.keystore
+*.jks
+keystore.properties
+secrets.properties
+Config/Secrets.local.*
+
+# Gradle
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+.DS_Store
+
+# Captures / profiling
+captures/
+*.hprof
+
+# Test / coverage
+coverage/
+jacoco/
+*.exec
+*.ec
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Env
+.env
+.env.*
+!.env.example

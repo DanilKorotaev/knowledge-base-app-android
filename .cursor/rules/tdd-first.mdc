@@ -1,0 +1,32 @@
+---
+description: TDD mandatory — failing tests before production code
+alwaysApply: true
+---
+
+# Test-driven development (mandatory)
+
+For every behavior change in this repository:
+
+1. **Write or extend a failing test** that specifies the behavior (unit first; UI test when the change is user-visible).
+2. **Implement** the minimum production code to make tests pass.
+3. **Refactor** only while tests stay green.
+4. Keep **line coverage ≥ 80%** (`./gradlew check`).
+
+## Do
+
+- Add tests in the **same change** as production code.
+- Prefer interface fakes / MockK / MockWebServer over hitting real network in unit tests.
+- For Compose flows: stub API runtime + `testTag` (see `docs/testing/UI.md`).
+
+## Do not
+
+- Ship production-only commits “tests later”.
+- Lower `MIN_COVERAGE` without an explicit owner decision.
+- Treat “compiles in Android Studio” as done.
+
+## References
+
+- `docs/CODING_STANDARDS.md`
+- `docs/testing/UNIT.md`
+- `docs/testing/UI.md`
+- `.cursor/rules/ci-coverage-gate.mdc`

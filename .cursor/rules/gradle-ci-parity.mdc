@@ -1,0 +1,41 @@
+---
+description: Use Gradle tasks that match CI — not ad-hoc Studio-only builds
+alwaysApply: true
+---
+
+# Gradle / CI parity (mandatory for agents)
+
+Validate Android changes with the **same commands GitHub Actions runs**. Do not treat “Build succeeded in Android Studio” as a substitute for the CI gate.
+
+## Required commands (repo root)
+
+| Goal | Command | CI workflow |
+|------|---------|-------------|
+| Unit tests + coverage gate | `./gradlew check` | `.github/workflows/ci.yml` |
+| Debug assemble | `./gradlew assembleDebug` | part of always-buildable check |
+| UI instrumentation | `./gradlew connectedDebugAndroidTest` (or CI-documented task) | CI UI job when present |
+| Release AAB (signed) | documented Play lane / Gradle task | `deploy-play.yml` |
+
+Run from **`knowledge-base-app-android/`** root.
+
+## Before push to `main`
+
+1. **`./gradlew check`** — must pass; enforces **≥ 80%** line coverage.
+2. If you changed CI workflows or coverage config, re-read them so local flags match.
+
+## Do NOT use for CI parity
+
+- Only compiling a single module in the IDE
+- Skipping JaCoCo “because tests passed”
+- Ad-hoc `gradle` flags that differ from `ci.yml`
+
+## Allowed outside the gate
+
+- Quick IDE Run for UX feel on emulator/device
+- Editing `VERSION` / docs without a full release upload locally
+
+## References
+
+- `docs/CI_CD.md`
+- `docs/DEVELOPMENT.md`
+- `.cursor/rules/ci-coverage-gate.mdc`

@@ -1,0 +1,30 @@
+---
+description: CI coverage gate ≥ 80% blocks store deploy
+alwaysApply: true
+---
+
+# CI coverage gate (blocks Play / RuStore)
+
+CI runs **`./gradlew check`**. The job fails if **line coverage** is below **`MIN_COVERAGE`** (default **80%**, set in Gradle JaCoCo config and `.github/workflows/ci.yml` once skeleton exists).
+
+**Deploy Play / RuStore** runs only after **green CI** on `main`.
+
+## Before push to `main`
+
+```bash
+./gradlew check
+```
+
+Confirm JaCoCo reports coverage ≥ 80% and all unit tests pass.
+
+## When adding features
+
+- Follow TDD (`.cursor/rules/tdd-first.mdc`).
+- If coverage drops near the gate, add focused unit tests (parsers, ViewModels, repositories) — not screenshot churn.
+- Do not lower `MIN_COVERAGE` without an explicit owner decision.
+
+## References
+
+- `docs/CODING_STANDARDS.md`
+- `docs/CI_CD.md`
+- `.cursor/rules/gradle-ci-parity.mdc`
